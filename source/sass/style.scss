@@ -5,15 +5,21 @@
 @import "header/page-header/page-header.scss";
 @import "header/main-nav/main-nav.scss";
 @import "footer/page-footer.scss";
+@import "content/content.scss";
 @import "stars/stars.scss";
 
 body {
-  background-color: hsl(0,0,0);
+  width: 100%;
+
+  /*background-color: hsl(0,0,0);*/
+  background: radial-gradient(circle, #1f1e1e, rgba(0, 0, 0, 1));
+
 
   font-family: "Roboto", "Arial", sans-serif;
   color: hsl(0, 0%, 100%);
 
   overflow:hidden;
+  perspective: 340px;
 }
 
 a {
