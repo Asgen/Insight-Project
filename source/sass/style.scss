@@ -1,45 +1,51 @@
 @import "fonts.scss";
 @import "normalize.scss";
 @import "variables.scss";
-
 @import "header/page-header/page-header.scss";
 @import "header/main-nav/main-nav.scss";
 @import "footer/page-footer.scss";
 @import "content/content.scss";
-@import "stars/stars.scss";
+@import "content/features/features.scss";
+@import "content/news/news.scss";
 
 body {
   width: 100%;
+  min-height: 100vh;
+  position: relative;
 
-  /*background-color: hsl(0,0,0);*/
   background: radial-gradient(circle, #1f1e1e, rgba(0, 0, 0, 1));
+  background-repeat: no-repeat;
 
 
   font-family: "Roboto", "Arial", sans-serif;
-  color: hsl(0, 0%, 100%);
+  font-weight: 300;
+  color: $white-color;
 
-  overflow:hidden;
   perspective: 340px;
 }
 
+.index-page {
+    overflow: hidden;
+}
+
 a {
-  color: hsl(0,0,100);
+  color: $white-color;
   text-decoration: none;
 
   transition: all 150ms ease-out;
 }
 
 a:hover {
-  color: hsla(195, 78%, 65%, 1);
+  color: $link-hover-color;
 }
 
-.noise {
-  z-index: 100;
+.visually-hidden {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  pointer-events: none;
-  opacity: 0.5;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }

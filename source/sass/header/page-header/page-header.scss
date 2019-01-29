@@ -1,5 +1,4 @@
 .page-header {
-  position: relative;
   height: 13vh;
 
   z-index: 1;
@@ -17,7 +16,6 @@
 
     top: 30px;
     right: 25px;
-
   }
 
   &__menu-button-el {
@@ -27,7 +25,7 @@
 
     @include margin-killer;
 
-    background: hsl(0,0,100);;
+    background: hsl(0, 0, 100);
     margin-top: 4px;
 
     float: right;
@@ -36,7 +34,7 @@
     transition: all 150ms ease-out;
   }
 
-   &__menu-button-el:first-of-type {
+  &__menu-button-el:first-of-type {
     margin-top: 0;
   }
 
@@ -52,8 +50,8 @@
     width: 63%;
   }
 
-    &__menu-button:hover &__menu-button-el {
-      width: 63%;
+  &__menu-button:hover &__menu-button-el {
+    width: 63%;
   }
 }
 
@@ -68,4 +66,3 @@
     right: 40px;
   }
 }
-

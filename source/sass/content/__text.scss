@@ -1,0 +1,70 @@
+.content__heading {
+  @include margin-killer;
+  margin-bottom: 28px;
+
+  font-size: 15px;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+.content__heading::before {
+  content: "";
+  width: 100px;
+  height: 1px;
+  background-color: $link-hover-color;
+  position: absolute;
+  top: 70px;
+  left: 50%;
+  margin-left: -50px;
+}
+
+.content__text {
+  @include margin-killer;
+  margin-bottom: 50px;
+
+  color: $white-transparent09-color;
+  font-family: "Merriweather", "Times New Roman", serif;
+  font-size: $main-font-size;
+  line-height: $main-line-height;
+
+  text-shadow: #000 0 1px 1px, #000 0 -1px 1px;
+}
+
+.content__text--news {
+  position: relative;
+  text-align: left;
+}
+
+.content__text--news::before {
+  content: "21.12.2018";
+  position: absolute;
+
+  top: -25px;
+
+  font-size: 13px;
+  line-height: 14px;
+}
+
+.content__text--news::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+
+  top: -7px;
+  left: 0;
+
+  background-color: white;
+}
+
+
+@media (min-width: $tablet-width) {
+  .content__heading {
+    font-size: 16px;
+  }
+
+  .content__text {
+    font-size: $main-font-size-tablet;
+    line-height: $main-line-height-tablet;
+  }
+}

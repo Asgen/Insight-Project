@@ -1,4 +1,4 @@
-.stars {
+.content__stars {
   top: 50%;
   left: 50%;
   width: 2px;
@@ -7,43 +7,52 @@
   animation: fly 3s linear infinite;
   transform-style: preserve-3d;
 }
-.stars:before, .stars:after {
+
+.content__stars::before,
+.content__stars::after {
   content: "";
   position: absolute;
   width: inherit;
   height: inherit;
   box-shadow: inherit;
 }
-.stars:before {
+
+.content__stars::before {
   transform: translateZ(-300px);
   animation: fade1 3s linear infinite;
 }
-.stars:after {
+
+.content__stars::after {
   transform: translateZ(-600px);
   animation: fade2 3s linear infinite;
 }
 
 @keyframes fly {
   from {
-    transform: translateZ(0px);
+    transform: translateZ(0);
   }
+
   to {
     transform: translateZ(300px);
   }
 }
+
 @keyframes fade1 {
   from {
-    opacity: .5;
+    opacity: 0.5;
   }
+
   to {
     opacity: 1;
   }
 }
+
 @keyframes fade2 {
   from {
     opacity: 0;
   }
+
   to {
-    opacity: .5;
+    opacity: 0.5;
   }
 }

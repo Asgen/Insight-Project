@@ -1,0 +1,32 @@
+'use strict';
+(function () {
+  var x;
+  var y;
+  var flexible = document.querySelector('.content__container');
+
+  if (document.title === 'Insight') {
+    flexible = document.querySelector('.content__logo-wrapper');
+  }
+
+  window.addEventListener('mousemove', function (e) {
+    var width = window.innerWidth;
+    var height = window.innerHeight;
+
+    // Начальные координаты
+    var startCoords = {
+      x: e.pageX,
+      y: e.pageY
+    };
+
+    // Смещение
+    var shift = {
+      x: e.pageX / width,
+      y: e.pageY / height
+    };
+
+    x = shift.x * 100 > 50 ? shift.x + 2 : shift.x - 2;
+    y = shift.y * 100 > 50 ? shift.y + 2 : shift.y - 2;
+
+    flexible.style.transform = 'translate3d(' + x + 'px, ' + y + 'px, 0.0001px)';
+  })
+})();

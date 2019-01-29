@@ -1,0 +1,17 @@
+.content__container {
+  max-width: 700px;
+  min-width: 300px;
+
+  margin: 0 auto;
+  padding: 50px 20px;
+
+  box-sizing: border-box;
+  transition: all 505ms linear 0s;
+}
+
+@media (min-width: $tablet-width) {
+  .content__container {
+    max-width: 900px;
+    padding: 50px 20px;
+  }
+}
