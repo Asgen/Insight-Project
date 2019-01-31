@@ -1,0 +1,41 @@
+<div class="content__container">
+  <h1 class="content__heading">О центре Insight</h1>
+  <h2 class="visually-hidden">Insight центр иностранных языков</h2>
+  <p class="content__text">
+    Insight - центр иностранных языков приглашает вас пройти обучение по авторской методике с индивидуальным подходом к каждому слушателю. С нами вы откроете для себя новые возможности изменить свою жизнь.
+  </p>
+  <div class="features">
+    <div class="features__item">
+      <img src="img/clock-circular-outline.svg" alt="Insight Гибкий график">
+      <h3>Гибкий график</h3>
+    </div>
+    <div class="features__item">
+      <img src="img/worlwide.svg" alt="Insight Подготовка к международным экзаменам">
+      <h3>Подготовка к TOEFL, IELTS, FCE, CAE</h3>
+    </div>
+    <div class="features__item">
+      <img src="img/russian.svg" alt="Insight русский, как иностранный">
+      <h3>РКИ - русский, как иностранный</h3>
+    </div>
+    <div class="features__item">
+      <img src="img/icon.svg" alt="Insight Разговорный английский, немецкий, французский, испанский, итальянский">
+      <h3>Английский, немецкий, французский, испанский, итальянский</h3>
+    </div>
+    <div class="features__item">
+      <img src="img/happiness.svg" alt="Insight Разные возрастные группы">
+      <h3>Разные возрастные группы</h3>
+    </div>
+    <div class="features__item">
+      <img src="img/test.svg" alt="Insight Подготовка к ЕГЭ и ОГЭ">
+      <h3>Подготовка к ЕГЭ и ОГЭ</h3>
+    </div>
+    <div class="features__item">
+      <img src="img/man-in-a-party-dancing-with-people.svg" alt="Insight Корпоративное обучение">
+      <h3>Корпоративное обучение</h3>
+    </div>
+    <div class="features__item">
+      <img src="img/esp.svg" alt="Insight Английский для специальных целей">
+      <h3>Английский для специальных целей</h3>
+    </div>
+  </div>
+</div>
