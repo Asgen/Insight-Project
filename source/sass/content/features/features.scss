@@ -3,7 +3,7 @@
   flex-wrap: wrap;
   justify-content: space-around;
 
-  margin: 0 -15px;
+  margin: 0 -10px;
 }
 
 .features__item {
@@ -20,8 +20,8 @@
   margin-bottom: 30px;
   padding: 20px 10px;
 
-border: 1px solid $white-color;
-border-radius: 15px;
+  border: 1px solid $white-color;
+  border-radius: 15px;
   box-sizing: border-box;
 }
 
@@ -30,7 +30,7 @@ border-radius: 15px;
 }
 
 .features img {
-  width: 80px
+  width: 80px;
 }
 
 .features h3 {
@@ -38,6 +38,12 @@ border-radius: 15px;
   margin-top: 10px;
 
   font-weight: 200;
+}
+
+@media (min-width: $normal-mobile-width) {
+  .features {
+    margin: 0;
+  }
 }
 
 @media (min-width: $tablet-width) {

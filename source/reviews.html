@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Insight</title>
+    <title>reviews Insight</title>
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
@@ -46,12 +46,128 @@
     </header>
 
     <section class="content">
+      <div class="content__container content__container--review">
+        <h1 class="content__heading">Отзывы Insight</h1>
 
-      <div class="content__logo-wrapper">
-        <img class="content__logo" src="img/wibicom_white_full.svg" alt="">
+        <section class="slider">
+          <h2 class="content__h2">Ученики языкового центра Insight делятся своими впечатлениями</h2>
+          <input type="radio" class="visually-hidden" id="review-1" name="toggle" checked>
+          <input type="radio" class="visually-hidden" id="review-2" name="toggle">
+          <input type="radio" class="visually-hidden" id="review-3" name="toggle">
+          <div class="slider__controls">
+            <label for="review-1">Первый</label>
+            <label for="review-2">Второй</label>
+            <label for="review-3">Третий</label>
+          </div>
+          <ul class="slider__list">
+            <li class="slider__item slide" id="slide1">
+              <time class="slider__time">12-02-2018</time>
+              <p class="slider__text">Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos, qui ratione voluptatem sequi nesciunt, neque porro quisquam est, qui dolorem ipsum, quia dolor sit, amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt, ut labore et dolore magnam aliquam quaerat voluptatem. ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? quis autem vel eum iure reprehenderit, qui in ea voluptate velit esse, quam nihil molestiae consequatur, vel illum, qui dolorem eum fugiat, quo voluptas nulla pariatur?</p>
+              <img class="slider__img" src="https://via.placeholder.com/50" alt="rere">
+              <span class="slider__author">Максим Соколов
+                <span class="slider__author-id">Предприниматель, 30 лет</span>
+              </span>
+              <span class="slider__stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+            </li>
+            <li class="slider__item slide" id="slide2">
+              <time class="slider__time">03-06-2018</time>
+              <p class="slider__text">Солнце в дымку за мосты
+ПАло, быстро закатилось…
+С поднебесной высоты-
+Как сквозь землю провалилось.
+
+День ушёл навечно прочь…
+Вскоре тоже вечер сгИнул…
+И теперь повсюду  ночь,
+Светлая наполовину.
+
+Из-за леса молодцОм
+Ясный месяц вышел к звёздам…
+Мир волшебным стал кругОм,
+Стал волшебным зимний воздух…
+
+Пролетевшая звезда,
+Ярко чИркнула по нЕбу
+И сгорела навсегда,
+Свет последний бросив снЕгу…
+</p>
+              <img class="slider__img" src="https://via.placeholder.com/50" alt="rere">
+              <span class="slider__author">Олег Петров
+                <span class="slider__author-id">Учитель, 20 лет</span>
+              </span>
+              <span class="slider__stars">&#9733;&#9733;&#9733;&#9734;&#9734;</span>
+            </li>
+            <li class="slider__item slide" id="slide3">
+              <time class="slider__time">15-01-2019</time>
+              <p class="slider__text">- Скажи-ка, дядя, ведь не даром Москва, спаленная пожаром,
+Французу отдана? Ведь были ж схватки боевые,
+Да, говорят, еще какие! Недаром помнит вся Россия Про день Бородина! - Да, были люди в наше время, Не то, что нынешнее племя: Богатыри - не вы! Плохая им досталась доля:
+Немногие вернулись с поля... Не будь на то господня воля,
+Не отдали б Москвы!</p>
+              <img class="slider__img" src="https://via.placeholder.com/50" alt="rere">
+              <span class="slider__author">Лилиана Нова
+                <span class="slider__author-id">Актриса, 24 года</span>
+              </span>
+              <span class="slider__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            </li>
+          </ul>
+          <button class="button button--review">Оставить отзыв</button>
+        </section>
+
+        
       </div>
-      <div class="content__stars-wrapper">
-        <div class="content__stars"></div>
+    </section>
+
+    <section class="modal">
+
+      <div class="content__container modal__wrapper">
+        <a href="/" class="modal__logo">
+          <img src="https://via.placeholder.com/45">
+        </a>
+        <div class="modal__close">
+          <img src="https://via.placeholder.com/45">
+        </div>
+        <h3 class="modal__heading">Хочу поделиться мнением о центре Insight</h3>
+        <p class="modal__description">Служба заботы о клиентах Insight рада любому отзыву!</p>
+        <form class="modal__form form" action="form_processing.php" method="POST">
+          <div class="form__input">
+            <span class="form__underline">
+              <input type="text" placeholder="Имя" name="name" required>
+            </span>
+          </div>
+          <div class="form__input">
+            <span class="form__underline">
+              <input type="text" placeholder="Фамилия" name="surname">
+            </span>
+          </div>
+          <div class="form__input">
+            <span class="form__underline">
+              <input type="mail" placeholder="Email" name="email" required>
+            </span>
+          </div>
+          <div class="form__input">
+            <span class="form__underline">
+              <input type="mail" placeholder="Телефон" name="phone">
+            </span>
+          </div>
+          <div class="form__input form__input--big">
+            <span class="form__underline">
+              <input type="text" placeholder="Тема" name="subject">
+            </span>
+          </div>
+          <div class="form__input form__input--big form__input--last">
+            <span class="form__underline">
+              <textarea name="body" cols="30" rows="5" placeholder="Мой отзыв" required></textarea>
+            </span>
+          </div>
+          <button class="button form__submit" type="submit">Отправить</button>
+          <div class="form__rules">
+            <h4>Правила публикации отзывов</h4>
+            <p>Отзывы публикуются только после их просмотра модератором.</p>
+            <h4>Не публикуются отзывы:</h4>
+            <p>содержащие нецензурную лексику, имеющие целью вступить в дискуссию с автором, оскорбить других рецензентов и авторов, содержащие большое количество лексических, орфографических и других ошибок, набранные латинскими буквами, рекламного характера (номера телефонов, адреса, ссылки на другие сайты), просьбы найти какой-либо другой центр, любой другой посторонний текст.</p>
+          </div>
+        </form>
       </div>
     </section>
 
@@ -72,5 +188,63 @@
     </footer>
 
     <script src="/js/all.js"></script>
+    <script>
+      'use strict';
+(function () {
+  var slider = document.querySelector('.slider');
+  var inputs = slider.querySelectorAll('input');
+  var slides = slider.querySelectorAll('.slide');
+  var labels = slider.querySelectorAll('label');
+  
+  var button = slider.querySelector('.button--review');
+
+  var sliderList = document.querySelector('.slider__list');
+
+  slider.addEventListener('change', function (e) {
+    // Номер айдишника последним символом указан, берем его в качестве номера слайда отняв еденицу
+    var slideIndex = Number(e.target.id.slice(-1)) - 1;
+    // Ширина слайда равна 100%
+    var margin = slideIndex * 100;
+    sliderList.style.marginLeft = '-' + margin + '%';
+    // Cбрасывает фон лэйбла
+    labels.forEach(function (elem) {
+      elem.style.boxShadow = 'none';
+    })
+    // Подсвечивает лэйбл
+    labels[slideIndex].style.boxShadow = '0px 0px 0px 5px white';
+
+
+    var positionTop = slides[slideIndex].scrollHeight + 160;
+    button.style.top = positionTop + 'px';
+  });
+
+  //------------------------------form
+  'use strict';
+  var form = document.querySelector('.form');
+
+  form.addEventListener('click', function (evt) {
+    var cleaner = form.querySelector('.focus');
+    if(cleaner) {
+      cleaner.classList.remove('focus');
+    }
+    evt.target.parentElement.classList.add('focus');
+  });
+
+  form.addEventListener('change', function (e) {
+    if (e.target.value) {
+      e.target.parentElement.classList.add('filled');
+    } else {
+      e.target.parentElement.classList.remove('filled');
+    }
+
+  });
+})();
+
+
+/*document.addEventListener('touchmove', function (e) {
+  console.log(e.touches[0].clientX);
+
+})*/
+    </script>
   </body>
 </html>

@@ -7,11 +7,19 @@
 @import "content/content.scss";
 @import "content/features/features.scss";
 @import "content/news/news.scss";
+@import "content/reviews/slider.scss";
+@import "common/modal/modal.scss";
+@import "common/form/form.scss";
+@import "common/modal/message.scss";
+
 
 body {
   width: 100%;
   min-height: 100vh;
   position: relative;
+
+  padding-bottom: 11vh;
+  box-sizing: border-box;
 
   background: radial-gradient(circle, #1f1e1e, rgba(0, 0, 0, 1));
   background-repeat: no-repeat;
@@ -34,6 +42,30 @@ a {
 a:hover {
   color: $link-hover-color;
 }
+
+.button {
+  display: inline-block;
+  line-height: $button-line-height;
+  font-size: $button-font-size;
+  font-weight: bold;
+  text-decoration: none;
+  text-transform: uppercase;
+  background: transparent;
+  border: 1px solid $link-hover-color;
+  color: $link-hover-color;
+  padding: 0 25px;
+  padding-top: 2px;
+}
+
+.button:hover {
+  background-color: $link-hover-color;
+  color: $black-color;
+}
+
+.button--review {
+    position: absolute;
+    left: 0;
+  }
 
 .visually-hidden {
   position: absolute;

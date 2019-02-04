@@ -1,14 +1,13 @@
 'use strict';
 (function () {
-  var x;
-  var y;
-  var flexible = document.querySelector('.content__container');
-
-  if (document.title === 'Insight') {
-    flexible = document.querySelector('.content__logo-wrapper');
-  }
-
   window.addEventListener('mousemove', function (e) {
+    var x;
+    var y;
+    var flexible = document.querySelector('.content__container');
+
+    if (document.title === 'Insight') {
+      flexible = document.querySelector('.content__logo-wrapper');
+    }
     var width = window.innerWidth;
     var height = window.innerHeight;
 

@@ -49,6 +49,7 @@ var read = function (e) {
 
 var show = function (e) {
   var data = e.target;
+  var path = e.target.responseURL.slice(22, -4);
 
   //console.log(e.target.responseURL.slice(22, -3));
 
@@ -56,11 +57,14 @@ var show = function (e) {
     databox.innerHTML = data.responseText;
     var state = { 'page_id': 1, 'user_id': 5 };
     var title = 'Hello World';
-    var url = e.target.responseURL.slice(22, -3) + 'html';
+    var url = path + '.html';
 
     history.pushState(state, title, url);
     window.closeMenu();
-    document.title = e.target.responseURL.slice(22, -4) + ' Insight';
+    document.title = path + ' Insight';
+    if(path === 'index') {
+      document.title = 'Insight';
+    }
   }
 };
 

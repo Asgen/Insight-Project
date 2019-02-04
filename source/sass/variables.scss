@@ -1,9 +1,15 @@
 $white-color: hsl(0, 0%, 100%);
+$black-color: hsl(0, 0%, 0%);
 $white-transparent09-color: hsla(0, 0%, 100%, 0.9);
 $white-half-transparent: hsla(0, 0%, 100%, 0.5);
+$white-transparent03-color: hsla(0, 0%, 100%, 0.3);
 $link-hover-color: hsla(195, 78%, 65%, 1);
+$main-background-color: hsl(0, 1, 10);
+$dark-gray-color: hsl(200, 7%, 25%);
 
-$tablet-width: 900px;
+$normal-mobile-width: 410px;
+$wide-mobile-width: 610px;
+$tablet-width: 920px;
 $desktop-width: 1200px;
 $retina-dpi: 144dpi;
 $retina-dppx: 1.5dppx;
@@ -11,6 +17,10 @@ $retina-dppx: 1.5dppx;
 $menu-heading-size: 27.5px;
 $menu-line-height: 49.5px;
 
+$button-font-size: 17px;
+$button-line-height: 47px;
+$rules-font-size: 10px;
+$rules-line-height: 12px;
 $news-time-font-size: 12px;
 $news-time-font-size-tablet: 14px;
 $news-time-line-height: 20px;
@@ -22,6 +32,76 @@ $main-font-size: 24px;
 $main-line-height: 28px;
 $main-font-size-tablet: 28px;
 $main-line-height-tablet: 34px;
+
+$xxs-heading-font-size: 30px;
+$xs-heading-font-size: 33px;
+$sm-heading-font-size: 36px;
+$tb-heading-font-size: 39px;
+
+$xxs-subtitle-font-size: 14px;
+$xxs-subtitle-line-height: 18px;
+$xs-subtitle-font-size: 16px;
+$xs-subtitle-line-height: 20px;
+$sm-subtitle-font-size: 18px;
+$sm-subtitle-line-height: 28px;
+$tb-subtitle-font-size: 20px;
+$tb-subtitle-line-height: 30px;
+
+@mixin xxs-subtitle {
+  font-family: "Merriweather", "Times New Roman", serif;
+  font-size: $xxs-subtitle-font-size;
+  line-height: $xxs-subtitle-line-height;
+  font-weight: 200;
+}
+
+@mixin xs-subtitle {
+  font-family: "Merriweather", "Times New Roman", serif;
+  font-size: $xs-subtitle-font-size;
+  line-height: $xs-subtitle-line-height;
+  font-weight: 400;
+}
+
+@mixin sm-subtitle {
+  font-family: "Merriweather", "Times New Roman", serif;
+  font-size: $sm-subtitle-font-size;
+  line-height: $sm-subtitle-line-height;
+  font-weight: 400;
+}
+
+@mixin tb-subtitle {
+  font-family: "Merriweather", "Times New Roman", serif;
+  font-size: $tb-subtitle-font-size;
+  line-height: $tb-subtitle-line-height;
+  font-weight: 400;
+}
+
+@mixin xxs-heading {
+  text-transform: uppercase;
+  font-size: $xxs-heading-font-size;
+  line-height: $xxs-heading-font-size;
+  font-weight: 100;
+}
+
+@mixin xs-heading {
+  text-transform: uppercase;
+  font-size: $xs-heading-font-size;
+  line-height: $xs-heading-font-size;
+  font-weight: 100;
+}
+
+@mixin sm-heading {
+  text-transform: uppercase;
+  font-size: $sm-heading-font-size;
+  line-height: $sm-heading-font-size;
+  font-weight: 100;
+}
+
+@mixin tb-heading {
+  text-transform: uppercase;
+  font-size: $tb-heading-font-size;
+  line-height: $tb-heading-font-size;
+  font-weight: 100;
+}
 
 @mixin general-heading-bold {
   font-size: $general-heading-size;
