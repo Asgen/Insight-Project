@@ -114,7 +114,7 @@
           <button class="button button--review">Оставить отзыв</button>
         </section>
 
-        
+
       </div>
     </section>
 
@@ -195,10 +195,22 @@
   var inputs = slider.querySelectorAll('input');
   var slides = slider.querySelectorAll('.slide');
   var labels = slider.querySelectorAll('label');
-  
+
   var button = slider.querySelector('.button--review');
 
   var sliderList = document.querySelector('.slider__list');
+
+  window.addEventListener('load', function () {
+    var positionTop = slides[0].scrollHeight + 200;
+    button.style.top = positionTop + 'px';
+
+    window.removeEventListener('load', function () {
+      var positionTop = slides[0].scrollHeight + 200;
+      button.style.top = positionTop + 'px';
+    });
+  });
+
+
 
   slider.addEventListener('change', function (e) {
     // Номер айдишника последним символом указан, берем его в качестве номера слайда отняв еденицу
@@ -214,8 +226,19 @@
     labels[slideIndex].style.boxShadow = '0px 0px 0px 5px white';
 
 
-    var positionTop = slides[slideIndex].scrollHeight + 160;
-    button.style.top = positionTop + 'px';
+    // Позиционирование кнопки
+    var positionTop = slides[slideIndex].scrollHeight + 200;
+
+    button.style.opacity = '0';
+
+    setTimeout(function() {
+      button.style.top = positionTop + 'px';
+      button.style.opacity = '1';
+    }, 400);
+
+
+
+
   });
 
   //------------------------------form

@@ -3,6 +3,7 @@
   width: 300px;
 
   margin: 0 auto;
+  padding-bottom: 40px;
 
   overflow: hidden;
 
@@ -119,6 +120,7 @@
 @media (min-width: $wide-mobile-width) {
   .slider {
     width: 580px;
+    padding-bottom: 70px;
   }
 
   .slider__controls {
@@ -130,6 +132,7 @@
 @media (min-width: $tablet-width) {
   .slider {
     width: 880px;
+    padding-bottom: 117px;
   }
 
   .slider__controls {
