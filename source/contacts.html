@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Insight</title>
+    <title>contacts Insight</title>
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
@@ -45,13 +45,43 @@
       </nav>
     </header>
 
-    <section class="content">
-
-      <div class="content__logo-wrapper">
-        <img class="content__logo" src="img/wibicom_white_full.svg" alt="">
-      </div>
-      <div class="content__stars-wrapper">
-        <div class="content__stars"></div>
+    <section class="content content--contacts">
+      <div class="content__container">
+        <h3 class="content__big-heading">Что вы хотите узнать?</h3>
+        <p class="content__subtitle modal__description">Помогать вам это наша работа</p>
+        <form class="form" action="form_processing.php" method="POST">
+          <div class="form__input">
+            <span class="form__underline">
+              <input type="text" placeholder="Имя" name="name" required>
+            </span>
+          </div>
+          <div class="form__input">
+            <span class="form__underline">
+              <input type="text" placeholder="Фамилия" name="surname">
+            </span>
+          </div>
+          <div class="form__input">
+            <span class="form__underline">
+              <input type="mail" placeholder="Email" name="email" required>
+            </span>
+          </div>
+          <div class="form__input">
+            <span class="form__underline">
+              <input type="mail" placeholder="Телефон" name="phone">
+            </span>
+          </div>
+          <div class="form__input form__input--big">
+            <span class="form__underline">
+              <input type="text" placeholder="Тема" name="subject">
+            </span>
+          </div>
+          <div class="form__input form__input--big form__input--last">
+            <span class="form__underline">
+              <textarea name="body" cols="30" rows="5" placeholder="Мой вопрос" required></textarea>
+            </span>
+          </div>
+          <button class="button form__submit" type="submit">Отправить</button>
+        </form>
       </div>
     </section>
 

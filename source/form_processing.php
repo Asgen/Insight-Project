@@ -12,7 +12,9 @@ $myemail = "dobra-lyubvi@yandex.ru";
 $message_to_myemail = "Здравствуйте!  
 Вашей контактной формой было отправлено сообщение!  
 Имя отправителя: $name  
+Фамилия отправителя: $surname  
 E-mail: $email  
+Phone: $phone  
 Текст сообщения: $message  
 Конец"; 
 /* Отправляем сообщение, используя mail() функцию */ 

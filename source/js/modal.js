@@ -6,7 +6,7 @@ if (document.title === 'reviews Insight') {
     var open = document.querySelector('.button--review');
 
     close.addEventListener('click', function () {
-        modal.style.opacity = '0';
+      modal.style.opacity = '0';
       modal.style.zIndex = '0';
       modal.style.visibility = 'hidden';
       modal.style.height = '0';
@@ -24,10 +24,7 @@ if (document.title === 'reviews Insight') {
       setTimeout(function() {
         document.body.scrollTop = 0; // For Safari
         document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-            modal.style.height = 'auto';
-            if(window.innerWidth < window.data.breakPoints.sm) {
-                modal.style.height = '100%';
-            }
+        modal.style.height = '100%';
         modal.style.opacity = '1';
         modal.style.zIndex = '1';
         modal.style.visibility = 'visible';

@@ -18,15 +18,30 @@
   margin-left: -50px;
 }
 
-.content__h2 {
+.content__big-heading {
   @include margin-killer;
-  margin-bottom: 75px;
+  @include xxs-heading;
 
-  color: $white-transparent09-color;
-  font-family: "Merriweather", "Times New Roman", serif;
-  font-weight: 300;
-  font-size: $main-font-size;
-  line-height: $main-line-height;
+  margin-bottom: 10px;
+}
+
+.content__subtitle {
+  position: relative;
+  @include margin-killer;
+  @include xxs-subtitle;
+
+  margin-bottom: 40px;
+}
+
+.content__subtitle::before {
+  content: "";
+  position: absolute;
+  bottom: -15px;
+
+  width: 10%;
+  height: 1px;
+
+  background-color: $link-hover-color;
 }
 
 .content__text {
@@ -39,6 +54,11 @@
   line-height: $main-line-height;
 
   text-shadow: #000000 0 1px 1px, #000000 0 -1px 1px;
+}
+
+.content__text--review {
+  margin-bottom: 75px;
+  font-weight: 300;
 }
 
 .content__text--news {
@@ -68,18 +88,41 @@
   background-color: white;
 }
 
+@media (min-width: $normal-mobile-width) {
+  .content__big-heading {
+    @include xs-heading;
+  }
+
+  .content__subtitle {
+    @include xs-subtitle;
+  }
+}
+
+@media (min-width: $wide-mobile-width) {
+  .content__big-heading {
+    @include sm-heading;
+  }
+
+  .content__subtitle {
+    @include sm-subtitle;
+  }
+}
 
 @media (min-width: $tablet-width) {
   .content__heading {
     font-size: 16px;
   }
 
-  .content__h2 {
-    margin-bottom: 55px;
-  }
-
   .content__text {
     font-size: $main-font-size-tablet;
     line-height: $main-line-height-tablet;
+  }
+
+  .content__big-heading {
+    @include tb-heading;
+  }
+
+  .content__subtitle {
+    @include tb-subtitle;
   }
 }
