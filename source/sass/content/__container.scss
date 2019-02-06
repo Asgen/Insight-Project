@@ -11,6 +11,10 @@
   transition: all 505ms linear 0s;
 }
 
+.content__container--align-left {
+  text-align: left;
+}
+
 @media (min-width: $tablet-width) {
   .content__container {
     max-width: 900px;

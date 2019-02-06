@@ -1,0 +1,32 @@
+<div class="content__container content__container--align-left">
+  <h3 class="content__big-heading">Прайс-лист центра Insight</h3>
+  <p class="content__subtitle modal__description">Есть возможность "заморозки" оплаты занятий</p>
+  <div class="price">
+    <table class="price__table">
+      <tr class="price__row">
+        <td class="price__cell">Индивидуальное занятие 60мин.</td>
+        <td class="price__cell">700р.</td>
+      </tr>
+      <tr class="price__row">
+        <td class="price__cell">Занятие в группе (4-5 человек)</td>
+        <td class="price__cell">400р</td>
+      </tr>
+      <tr class="price__row">
+        <td class="price__cell">Абонемент интенсивный разговорный 18 занятий</td>
+        <td class="price__cell">5500р</td>
+      </tr>
+      <tr class="price__row">
+        <td class="price__cell">Абонемент General 9 занятий</td>
+        <td class="price__cell">3600р</td>
+      </tr>
+      <tr class="price__row">
+        <td class="price__cell">Абонемент General+</td>
+        <td class="price__cell">4400р</td>
+      </tr>
+      <tr class="price__row">
+        <td class="price__cell">Абонемент Boost (2 человека) 90мин. 9 занятий</td>
+        <td class="price__cell">6200р</td>
+      </tr>
+    </table>
+  </div>
+</div>

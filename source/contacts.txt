@@ -1,4 +1,4 @@
-<div class="content__container">
+<div class="content__container content__container--align-left">
   <h3 class="content__big-heading">Что вы хотите узнать?</h3>
   <p class="content__subtitle modal__description">Помогать вам это наша работа</p>
   <form class="form" action="form_processing.php" method="POST">
