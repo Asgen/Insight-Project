@@ -18,6 +18,12 @@
   transition: all 0.7s linear 0s;
 }
 
+/* Главная */
+.content__logo-sign {
+  @include margin-killer;
+  
+}
+
 .content__stars-wrapper {
   width: 90%;
   height: 76vh;
@@ -38,3 +44,4 @@
 @import "__stars.scss";
 @import "__text.scss";
 @import "__container.scss";
+@import "__arrow.scss"

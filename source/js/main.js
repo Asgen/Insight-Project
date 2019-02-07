@@ -1,17 +1,34 @@
 'use strict';
 var pageTitle = document.querySelector('title');
-new MutationObserver(function(mutations) {
-    console.log(mutations[0].target.textContent);
-    if(mutations[0].target.textContent === 'reviews Insight') {
-      window.funcs.changeSlides();
-    }
+var logo = document.querySelector('.page-header__logo');
 
-  // Если есть кнопка открытия модалки, то выполнить
-  var open = document.querySelector('.button--review');
-  if(open) {
-    open.addEventListener('click', window.funcs.onModalOpen);
+new MutationObserver(function(mutations) {
+  var func = window.funcs;
+
+  // Если страница отзывов
+  if(mutations[0].target.textContent === window.data.PageTitle.REVIEWS) {
+    func.changeSlides();
   }
 
+  logo.style.display = 'block';
+  // Если главная
+  if(mutations[0].target.textContent === window.data.PageTitle.MAIN) {
+    logo.style.display = 'none';
+  }
+
+  // Если есть кнопка открытия модалки, то выполнить
+  var open = document.querySelector('.button--open-modal');
+  if(open) {
+    open.addEventListener('click', func.onModalOpen);
+  }
+
+  // Если есть форма, то выполнить
+  var form = document.querySelector('.form');
+  if (form) {
+    form.addEventListener('click', func.onInputClick);
+    form.addEventListener('change', func.onFormChange);
+    form.addEventListener('submit', func.onFormSubmit);
+  }
 
 }).observe(
     pageTitle,

@@ -13,18 +13,23 @@
   z-index: 10;
 
   &__container {
+    width: 80%;
     max-width: 500px;
-    
-    padding: 50px 20px;
+    height: 25%;
 
-    background-color: $white-half-transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    
+    padding: 50px 20px;    
+    border-radius: 20px;
   }
 
   &__container--success {
-    border: 3px solid green;
+    border: 3px solid $success-message-color;
   }
 
   &__container--error {
-    border: 3px solid red;
+    border: 3px solid $error-message-color;
   }
 }

@@ -1,33 +1,42 @@
 'use strict';
 (function () {
+  // Адрес
+  var DIR = 'http://localhost:3000/';
+
+  // Цвета
   var Color = {
     onHoverLinkColor: 'hsla(195, 78%, 65%, 1)',
     whiteHalfTransparent: 'hsla(0, 0%, 100%, 0.5)'
   };
 
-  var breakPoints = {
-    xs: 410,
-    sm: 610,
-    tb: 900
-  };
+  // Title страницы отзывов
+  var PageTitle = {
+    MAIN: 'Insight',
+    REVIEWS: 'reviews Insight' 
+  }
 
-  var marginToMoveSlide = {
-    onXxs: 300,
-    onXs: 380,
-    onSm: 580,
-    onTb: 880
-  };
+  // Коды сервера
+  var Code = {
+    SUCCESS: 200
+  }
 
   // Коды клавиш
   var KeyCode = {
     ESC_KEYCODE: 27,
     ENTER_KEYCODE: 13
+  };
+
+  var Message = {
+    onSuccess: 'Спасибо! Ваше сообщение отправлено.',
+    onError: 'Ошибка отправки сообщения! Попрубуйте снова.'
   }
 
   window.data = {
+    DIR: DIR,
     Color: Color,
-    breakPoints: breakPoints,
-    marginToMoveSlide: marginToMoveSlide,
-    KeyCode: KeyCode
+    PageTitle: PageTitle,
+    KeyCode: KeyCode,
+    Message: Message,
+    Code: Code
   }
 })();

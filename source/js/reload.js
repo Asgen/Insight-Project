@@ -1,15 +1,16 @@
 var databox;
 var pageTitle = document.querySelector('title');
+var DIR = window.data.DIR.length;
 
 var init = function () {
   databox = document.querySelector('.content');
   var link = document.querySelectorAll('.main-nav__link');
   var logoLink = document.querySelector('.main-nav__logo');
-  if(link) {
-    link.forEach(function (elem) {
+  
+  link.forEach(function (elem) {
       elem.addEventListener('click', read);
-    });
-  }
+  });
+  
   logoLink.addEventListener('click', read);
 };
 
@@ -25,10 +26,10 @@ var read = function (e) {
 
   if (e.target.href) {
     path = e.target.href;
-    var attribute = 'a[href="' + path.slice(22) + '"]';
+    var attribute = 'a[href="' + path.slice(DIR) + '"]';
     var currentLink = document.querySelector(attribute);
     currentLink.classList.add('main-nav__link--active');
-    url = path.slice(22, -4) + 'txt'; // 22 символа - это корневой путь, -4 расширение html
+    url = path.slice(DIR, -4) + 'txt'; // 4 символа - отсекаем расширение html
   }
   else {
     path = e.target.parentElement.href;
@@ -43,27 +44,20 @@ var read = function (e) {
 
 var show = function (e) {
   var data = e.target;
-  var path = e.target.responseURL.slice(22, -4);
+  var path = e.target.responseURL.slice(DIR, -4);
 
-  if(data.status == 200){
+  if(data.status == window.data.Code.SUCCESS){
     databox.innerHTML = data.responseText;
     var state = { 'page_id': 1, 'user_id': 5 };
     var title = 'Insight';
     var url = path + '.html';
 
     history.pushState(state, title, url);
-    window.closeMenu();
-    //document.title = path + ' Insight';
+    window.menuToggle('close');
     pageTitle.textContent = path + ' Insight';
     if(path === 'index') {
-      //document.title = 'Insight';
       pageTitle.textContent = 'Insight';
     }
-
-    /*// Для страницы отзывов
-    if(path === 'review') {
-      window.funcs.changeSlides();
-    }*/
   }
 };
 

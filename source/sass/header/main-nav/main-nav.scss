@@ -12,7 +12,7 @@
 
   font-size: $menu-heading-size;
   line-height: $menu-line-height;
-  font-weight: 200;
+  font-weight: 100;
   text-transform: uppercase;
 
   transition: all 0.5s ease-in-out;
@@ -40,7 +40,8 @@
   }
 
   &__item {
-    transition: all 0.5s ease-in-out;
+    position: relative;
+    transition: all 150ms ease-out;
   }
 
   &__item:first-child {
@@ -67,9 +68,44 @@
     color: hsla(0, 0%, 100%, 0.6);
   }
 
+  &__link::before,
+  &__link::after {
+    content: '';
+    width: 0;
+    height: 1px;
+
+    position: absolute;    
+    top: 50%;
+
+    background: #5ec7eb;
+    transition: all 100ms ease-out;
+  }
+
+  &__link:hover::before,
+  &__link:hover::after {
+    width: 50px;
+  }
+
+  &__link:hover::before{
+    left: 100%;
+    margin-left: 20px;
+  }
+
+  &__link:hover::after{
+    right: 100%;
+    margin-right: 20px;
+  }
+
   &__link--active,
   &__link--active:hover {
     color: hsla(0, 0%, 100%, 1);
+  }
+}
+
+@media (min-width: $tablet-width) {
+  .main-nav {
+    font-size: $menu-heading-md-size;
+    line-height: $menu-line-md-height;
   }
 }
 

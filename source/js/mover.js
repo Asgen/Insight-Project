@@ -23,8 +23,8 @@
       y: e.pageY / height
     };
 
-    x = shift.x * 100 > 50 ? shift.x + 2 : shift.x - 2;
-    y = shift.y * 100 > 50 ? shift.y + 2 : shift.y - 2;
+    x = shift.x * 100 > 50 ? shift.x + 3 : shift.x - 3;
+    y = shift.y * 100 > 50 ? shift.y + 3 : shift.y - 3;
 
     flexible.style.transform = 'translate3d(' + x + 'px, ' + y + 'px, 0.0001px)';
   })

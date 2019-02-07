@@ -39,10 +39,10 @@
 
     if (status === 'success') {
       container.classList.add('message__container--success');
-      message.textContent = 'okBoy';
+      message.textContent = window.data.Message.onSuccess;
     } else {
       container.classList.add('message__container--error');
-      message.textContent = 'fucked up';
+      message.textContent = window.data.Message.onError;
     }
     container.appendChild(message);
     wrapper.appendChild(container);
@@ -58,10 +58,119 @@
     var slider = document.querySelector('.slider');
     var inputs = slider.querySelectorAll('input');
     var slides = slider.querySelectorAll('.slide');
+    var slidesAmount = slides.length;
     var labels = slider.querySelectorAll('label');
-    var button = slider.querySelector('.button--review');
+    var button = slider.querySelector('.button--open-modal');
     var sliderList = document.querySelector('.slider__list');
+    var prev = document.querySelector('.content__arrow--prev');
+    var next = document.querySelector('.content__arrow--next');
+    var startPosition = next.offsetTop;
+    var slideHeight = slides[0].scrollHeight;
 
+    // ------ Swipe ------
+    var touchStartCoords =  {'x':-1, 'y':-1};  // X and Y coordinates on mousedown or touchstart events.
+    var touchEndCoords = {'x':-1, 'y':-1}; // X and Y coordinates on mouseup or touchend events.
+    var DIRection = 'undefined'; // Swipe DIRection
+    var minDistanceXAxis = 30; // Min distance on mousemove or touchmove on the X axis
+    var maxDistanceYAxis = 30;// Max distance on mousemove or touchmove on the Y axis
+    var maxAllowedTime = 1000; // Max allowed time between swipeStart and swipeEnd
+    var startTime = 0; // Time on swipeStart
+    var elapsedTime = 0; // Elapsed time between swipeStart and swipeEnd
+    var targetElement = slider; // Element to delegate
+
+    var swipeStart = function (e) {
+      e = e ? e : window.event;
+      e = ('changedTouches' in e)?e.changedTouches[0] : e;
+      touchStartCoords = {'x':e.pageX, 'y':e.pageY};
+      startTime = new Date().getTime();
+      //targetElement.textContent = " ";
+    };
+
+    var swipeMove = function (e){
+      e = e ? e : window.event;
+      e.preventDefault();
+    };
+
+    var swipeEnd = function (e) {
+      e = e ? e : window.event;
+      e = ('changedTouches' in e)?e.changedTouches[0] : e;
+      touchEndCoords = {'x':e.pageX - touchStartCoords.x, 'y':e.pageY - touchStartCoords.y};
+      elapsedTime = new Date().getTime() - startTime;
+      if (elapsedTime <= maxAllowedTime){
+        if (Math.abs(touchEndCoords.x) >= minDistanceXAxis && Math.abs(touchEndCoords.y) <= maxDistanceYAxis){
+          DIRection = (touchEndCoords.x < 0)? 'left' : 'right';
+          switch(DIRection){
+            case 'left':
+              pushNextSlide();
+              break;
+            case 'right':              
+              pushPrevSlide();
+              break;
+          }
+        }
+      }
+    };
+
+    var addMultipleListeners = function (el, s, fn) {
+      var evts = s.split(' ');
+      for (var i=0, iLen=evts.length; i<iLen; i++) {
+        el.addEventListener(evts[i], fn, false);
+      }
+    };   
+    // ------ end Swipe------
+
+    // Переключатель на след. слайд
+    var pushNextSlide = function () {
+      var currentSlide = slider.querySelector('input:checked');
+      var currentIndex = Number(currentSlide.id.slice(-1)) - 1;
+      var newIndex = (currentIndex + 1) % slidesAmount;
+      change(newIndex);
+    };
+
+    // Переключатель на предыдущий слайд
+    var pushPrevSlide = function () {
+      var currentSlide = slider.querySelector('input:checked');
+      var currentIndex = Number(currentSlide.id.slice(-1)) - 1;
+      var newIndex = slidesAmount -1;
+      if(currentIndex > 0) {
+        newIndex = (currentIndex - 1) % slidesAmount;
+      }
+      change(newIndex);
+    };
+    
+
+    // Функция смены
+    var change = function (index) {
+      inputs[index].checked = true;
+      // Ширина слайда равна 100%
+      var margin = index * 100;
+      sliderList.style.marginLeft = '-' + margin + '%';
+      // Cбрасывает фон лэйбла
+      labels.forEach(function (elem) {
+        elem.style.boxShadow = 'none';
+      })
+      // Подсвечивает лэйбл
+      labels[index].style.boxShadow = '0px 0px 0px 5px white';
+
+      // Позиционирование кнопки
+      slideHeight = slides[index].scrollHeight;
+      var positionTop = slideHeight + 200;
+
+      button.style.opacity = '0';
+
+      setTimeout(function() {
+        button.style.top = positionTop + 'px';
+        button.style.opacity = '1';
+      }, 400);
+
+
+      // Позиционирование стрелок
+      slideHeight -= slides[0].scrollHeight;
+      next.style.top = startPosition + slideHeight / 2 + 'px';
+      prev.style.top = startPosition + slideHeight / 2 + 'px';
+    };
+
+    // Позиционирование кнопки при загрузке страницы
     window.addEventListener('load', function () {
       var positionTop = slides[0].scrollHeight + 200;
       button.style.top = positionTop + 'px';
@@ -72,37 +181,31 @@
       });
     });
 
+    // Смена слайдов при нажатии на радио-кнопки
     slider.addEventListener('change', function (e) {
       // Номер айдишника последним символом указан, берем его в качестве номера слайда отняв еденицу
       var slideIndex = Number(e.target.id.slice(-1)) - 1;
-      // Ширина слайда равна 100%
-      var margin = slideIndex * 100;
-      sliderList.style.marginLeft = '-' + margin + '%';
-      // Cбрасывает фон лэйбла
-      labels.forEach(function (elem) {
-        elem.style.boxShadow = 'none';
-      })
-      // Подсвечивает лэйбл
-      labels[slideIndex].style.boxShadow = '0px 0px 0px 5px white';
-
-      // Позиционирование кнопки
-      var positionTop = slides[slideIndex].scrollHeight + 200;
-
-      button.style.opacity = '0';
-
-      setTimeout(function() {
-        button.style.top = positionTop + 'px';
-        button.style.opacity = '1';
-      }, 400);
+      change(slideIndex);
     });
 
-    /*document.addEventListener('touchmove', function (e) {
-  console.log(e.touches[0].clientX);
+    // Смена слайдов стрелками
+    next.addEventListener('click', function (e) {
+      e.preventDefault();
+      pushNextSlide();
+    });
 
-})*/
+    prev.addEventListener('click', function (e) {
+      e.preventDefault();
+      pushPrevSlide();
+    });
+
+    // Смена слайдов swip'ом
+    addMultipleListeners(targetElement, 'mousedown touchstart', swipeStart);
+    addMultipleListeners(targetElement, 'mousemove touchmove', swipeMove);
+    addMultipleListeners(targetElement, 'mouseup touchend', swipeEnd);
   };
 
-  //--------------Модалка
+  // ------ Модалка ------
   var renderModal = function (templateId, templateClass) {
     // Вставляем разметку в body
     var body = document.querySelector('body');
@@ -149,14 +252,73 @@
       modal.style.zIndex = '1';
       modal.style.visibility = 'visible';
     }, 400);
+
+    // Если в модальном окне есть форма
+    var form = document.querySelector('.form');
+    if (form) {
+      form.addEventListener('click', onInputClick);
+      form.addEventListener('change', onFormChange);
+      form.addEventListener('submit', onFormSubmit);
+    }
   };
-  //---------------------------модалка конец------
+  // ------ модалка конец ------
+
+  // ------ Форма ------
+
+  // Сброс формы
+  var resetForm = function (form) {
+    form.reset();
+    var filledFeilds = form.querySelectorAll('.filled');
+    filledFeilds.forEach(function (el) {
+      el.classList.remove('filled');
+    });
+  };
+
+  // Callback при успешной отправке
+  var onSuccessSend = function (xhr, evt) {
+    var form = document.querySelector('.form');
+    // Сброс формы
+    resetForm(form);
+    // Показывает сообщение об успешной отправке (логика закрытия внутри)
+    showMessage('success');
+  };
+
+  var onError = function (xhr) {
+    showMessage('red');
+  };
+
+  var onInputClick = function (evt) {
+    var form = document.querySelector('.form');
+    var cleaner = form.querySelector('.focus');
+    if(cleaner) {
+      cleaner.classList.remove('focus');
+    }
+    evt.target.parentElement.classList.add('focus');
+  };
+
+  var onFormChange = function (e) {
+    if (e.target.value) {
+      e.target.parentElement.classList.add('filled');
+    } else {
+      e.target.parentElement.classList.remove('filled');
+    }
+  };
+
+  var onFormSubmit = function (evt) {
+    var form = document.querySelector('.form');
+    evt.preventDefault();
+    window.xhrRequest('form_processing.php', 'POST', onSuccessSend, onError, new FormData(form));
+  };
+  // ------ Форма конец ------
 
   window.funcs = {
     showMessage: showMessage,
     changeSlides: changeSlides,
     renderModal: renderModal,
     onModalClose: onModalClose,
-    onModalOpen: onModalOpen
+    onModalOpen: onModalOpen,
+    onInputClick: onInputClick,
+    onFormChange: onFormChange,
+    onFormSubmit: onFormSubmit
   }
 })();
