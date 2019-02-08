@@ -40,10 +40,6 @@ a {
   transition: all 150ms ease-out;
 }
 
-a:hover {
-  color: $link-hover-color;
-}
-
 .button {
   display: inline-block;
   line-height: $button-line-height;

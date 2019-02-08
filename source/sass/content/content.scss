@@ -6,12 +6,16 @@
   transition: all 0.4s linear 0s;
 }
 
+.content__logo {
+  width: 50%;
+}
+
 .content__logo-wrapper {
   position: absolute;
 
   width: 320px;
 
-  top: 30%;
+  top: 20%;
   left: 50%;
   margin-left: -160px;
 
@@ -21,7 +25,7 @@
 /* Главная */
 .content__logo-sign {
   @include margin-killer;
-  
+
 }
 
 .content__stars-wrapper {
@@ -38,6 +42,10 @@
 @media (min-width: $tablet-width) {
   .content__stars-wrapper {
     width: 75%;
+  }
+
+  .content__logo {
+    width: 60%;
   }
 }
 

@@ -15,6 +15,11 @@
   box-sizing: border-box;
 
   font-size: 14px;
+  font-weight: 200;
+
+  & a:hover {
+    color: $link-hover-color;
+  }
 
   &__id {
     @include margin-killer;

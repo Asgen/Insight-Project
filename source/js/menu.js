@@ -6,13 +6,13 @@
   var menuToggle = function (state) {
     var menu = document.querySelector('.main-nav');
     var links = document.querySelectorAll('.main-nav__item');
-    var translate = 100;
+    var translate = 20;
 
     var parcer = {
       do: function () {
         links.forEach(function (el) {
           el.style.transform = 'translateY(' + translate + 'px)';
-          translate += 50;
+          translate += 10;
         });
       }
     };
@@ -27,13 +27,13 @@
           el.style.transform = 'translateY(0)';
         });
         break;
-      case 'close':              
+      case 'close':
         menu.style.opacity = '0';
         menu.style.zIndex = '0';
         menu.style.visibility = 'hidden';
         parcer.do();
         break;
-    } 
+    }
   };
 
   openButton.addEventListener('click', function () {
