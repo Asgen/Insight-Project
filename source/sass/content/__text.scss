@@ -27,9 +27,9 @@
 
 .content__subtitle {
   position: relative;
+
   @include margin-killer;
   @include xxs-subtitle;
-
   margin-bottom: 40px;
 }
 

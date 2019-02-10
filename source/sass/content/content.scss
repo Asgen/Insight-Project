@@ -4,6 +4,7 @@
   text-align: center;
 
   transition: all 0.4s linear 0s;
+  perspective: 340px;
 }
 
 .content__logo {
@@ -25,7 +26,6 @@
 /* Главная */
 .content__logo-sign {
   @include margin-killer;
-
 }
 
 .content__stars-wrapper {

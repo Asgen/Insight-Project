@@ -17,7 +17,7 @@
 }
 
 .price__cell:nth-child(2n) {
-  color: #FFD162;
+  color: $price-color;
 }
 
 @media (min-width: $normal-mobile-width) {

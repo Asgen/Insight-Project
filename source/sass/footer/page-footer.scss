@@ -16,6 +16,7 @@
 
   font-size: 14px;
   font-weight: 200;
+  text-transform: uppercase;
 
   & a:hover {
     color: $link-hover-color;
@@ -23,7 +24,7 @@
 
   &__id {
     @include margin-killer;
-
+    font-size: 0.8em;
     display: none;
   }
 }

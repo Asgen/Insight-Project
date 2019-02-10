@@ -1,6 +1,21 @@
 <div class="content__container content__container--align-left">
   <h3 class="content__big-heading">Что вы хотите узнать?</h3>
   <p class="content__subtitle modal__description">Помогать вам это наша работа</p>
+  <ul class="content__contacts-list contacts">
+    <li class="contacts__item">
+      <strong>M</strong>
+      <a href="mailto:">kakoi@email</a>
+    </li>
+    <li class="contacts__item">
+      <strong>T</strong>
+      <a href="tel:+79284373301">+7(928) 437-33-01</a>
+    </li>
+    <li class="contacts__item">
+      <strong>A</strong>
+      <a href="https://goo.gl/maps/pdUussxPm912" target="_blank">Анапа, ул. Краснозеленых, 15, офис 4</a>
+    </li>
+  </ul>
+  <h3 class="content__big-heading">Особый вопрос?</h3>
   <form class="form" action="form_processing.php" method="POST">
     <div class="form__input">
       <span class="form__underline">

@@ -9,9 +9,11 @@
 @import "content/news/news.scss";
 @import "content/reviews/slider.scss";
 @import "content/price/price.scss";
+@import "content/contacts/contacts.scss";
 @import "common/modal/modal.scss";
 @import "common/form/form.scss";
 @import "common/modal/message.scss";
+@import "loader/loader.scss";
 
 
 body {
@@ -29,8 +31,6 @@ body {
   font-family: "Roboto", "Arial", sans-serif;
   font-weight: 300;
   color: $white-color;
-
-  perspective: 340px;
 }
 
 a {
@@ -60,11 +60,11 @@ a {
 }
 
 .button--open-modal {
-    position: absolute;
-    left: 0;
+  position: absolute;
+  left: 0;
 
-    transition: opacity 300ms ease;
-  }
+  transition: opacity 300ms ease;
+}
 
 .visually-hidden {
   position: absolute;
