@@ -7,7 +7,7 @@ $email = htmlspecialchars($_POST["email"]);
 $phone = htmlspecialchars($_POST["phone"]); 
 $message = htmlspecialchars($_POST["body"]); 
 /* Устанавливаем e-mail адресата */ 
-$myemail = "dobra-lyubvi@yandex.ru";  
+$myemail = "info@insight.ru.net";  
 /* Создаем новую переменную, присвоив ей значение */ 
 $message_to_myemail = "Здравствуйте!  
 Вашей контактной формой было отправлено сообщение!  

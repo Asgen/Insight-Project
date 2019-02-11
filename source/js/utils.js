@@ -102,15 +102,15 @@
 
     var swipeStart = function (e) {
       e = e ? e : window.event;
-      e = ('changedTouches' in e)?e.changedTouches[0] : e;
+      e = ('changedTouches' in e) ? e.changedTouches[0] : e;
       touchStartCoords = {'x':e.pageX, 'y':e.pageY};
       startTime = new Date().getTime();
       //targetElement.textContent = " ";
     };
 
-    var swipeMove = function (e){
+    var swipeMove = function (e) {
       e = e ? e : window.event;
-      e.preventDefault();
+      //e.preventDefault();
     };
 
     var swipeEnd = function (e) {

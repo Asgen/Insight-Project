@@ -25,6 +25,10 @@
     position: absolute;
     left: 30px;
     top: 30px;
+    opacity: 0;
+
+    transform: translateY(-50px);
+    transition: all 0.9s ease;
   }
 
   &__close {
@@ -85,23 +89,23 @@
   }
 
   &__item:first-child {
-    transform: translateY(100px);
+    transform: translateY(10px);
   }
 
   &__item:nth-child(2) {
-    transform: translateY(150px);
+    transform: translateY(20px);
   }
 
   &__item:nth-child(3) {
-    transform: translateY(200px);
+    transform: translateY(30px);
   }
 
   &__item:nth-child(4) {
-    transform: translateY(250px);
+    transform: translateY(40px);
   }
 
   &__item:nth-child(5) {
-    transform: translateY(275px);
+    transform: translateY(50px);
   }
 
   &__link {

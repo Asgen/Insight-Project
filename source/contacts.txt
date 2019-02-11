@@ -4,7 +4,7 @@
   <ul class="content__contacts-list contacts">
     <li class="contacts__item">
       <strong>M</strong>
-      <a href="mailto:">kakoi@email</a>
+      <a href="mailto:info@insight.ru.net">info@insight.ru.net</a>
     </li>
     <li class="contacts__item">
       <strong>T</strong>
@@ -29,12 +29,12 @@
     </div>
     <div class="form__input">
       <span class="form__underline">
-        <input type="mail" placeholder="Email" name="email" required autocomplete="off">
+        <input type="email" placeholder="Email" name="email" required autocomplete="off">
       </span>
     </div>
     <div class="form__input">
       <span class="form__underline">
-        <input type="mail" placeholder="Телефон" name="phone" autocomplete="off">
+        <input type="number" placeholder="Телефон" name="phone" autocomplete="off">
       </span>
     </div>
     <div class="form__input form__input--big">
