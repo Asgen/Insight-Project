@@ -15,9 +15,10 @@
     if (e.type === 'popstate') {
       read(e);
     } else {
-      link.forEach(function (elem) {
-          elem.addEventListener('click', read);
-      });
+      for (var i = 0; i < link.length; i++) {
+        link[i].addEventListener('click', read);
+    }
+
       logoLink.addEventListener('click', read);
       headerLogo.addEventListener('click', read);
     }
@@ -35,18 +36,19 @@
     if (e.type !== 'popstate') {
       e.preventDefault();
       if (e.target.href) {
-      path = e.target.href;
-      var attribute = 'a[href="' + path.slice(DIR) + '"]';
-      var currentLink = document.querySelector(attribute);
-      if (currentLink) {
-        currentLink.classList.add('main-nav__link--active');
-      }
-      url = path.slice(DIR, -4) + 'txt'; // 4 символа - отсекаем расширение html
+        path = e.target.href;
+        var attribute = 'a[href="' + path.slice(DIR) + '"]';
+        var currentLink = document.querySelector(attribute);
+        if (currentLink) {
+          currentLink.classList.add('main-nav__link--active');
+        }
+        url = path.slice(DIR, -4) + 'txt'; // 4 символа - отсекаем расширение html
       }
       else {
         path = e.target.parentElement.href;
         url = 'index.txt';
       }
+      if(url === '') {url = 'index.txt'}
       request.addEventListener('load', function (e) {show(e, 'click')});
     } else {
       path = e.target.location.href;
@@ -55,7 +57,9 @@
       if (currentLink) {
         currentLink.classList.add('main-nav__link--active');
       }
+
       url = path.slice(DIR, -4) + 'txt'; // 4 символа - отсекаем расширение html
+      if(url === '') {url = 'index.txt'}
       request.addEventListener('load', function (e) {show(e, 'browser')});
     }
 

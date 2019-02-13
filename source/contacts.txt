@@ -1,6 +1,6 @@
 <div class="content__container content__container--align-left">
   <h3 class="content__big-heading">Что вы хотите узнать?</h3>
-  <p class="content__subtitle modal__description">Помогать вам это наша работа</p>
+  <p class="content__subtitle modal__description">Помогать Вам - это наша работа</p>
   <ul class="content__contacts-list contacts">
     <li class="contacts__item">
       <strong>M</strong>
