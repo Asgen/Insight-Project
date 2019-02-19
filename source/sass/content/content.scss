@@ -4,7 +4,6 @@
   text-align: center;
 
   transition: all 0.4s linear 0s;
-  perspective: 340px;
 }
 
 .content__logo {
@@ -35,6 +34,7 @@
   margin: 0 auto;
 
   box-sizing: border-box;
+  perspective: 340px;
 }
 
 @media (min-width: $tablet-width) {
