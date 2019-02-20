@@ -1,6 +1,6 @@
 <div class="content__container content__container--align-left">
   <h3 class="content__big-heading">Прайс-лист центра Insight</h3>
-  <p class="content__subtitle modal__description">Есть возможность "заморозки" оплаты занятий</p>
+  <p class="content__subtitle modal__description">предусмотрена возможность "заморозки" оплаты занятий</p>
   <div class="price">
     <table class="price__table">
       <tr class="price__row">

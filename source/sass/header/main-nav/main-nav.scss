@@ -25,12 +25,56 @@
     position: absolute;
     left: 30px;
     top: 30px;
+    opacity: 0;
+
+    transform: translateY(-50px);
+    transition: all 0.9s ease;
   }
 
   &__close {
     position: absolute;
-    right: 30px;
-    top: 30px;
+    right: 15px;
+    top: 25px;
+
+    width: 40px;
+    height: 40px;
+
+    cursor: pointer;
+    z-index: 1;
+  }
+
+  &__close::before,
+  &__close::after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+
+    width: 100%;
+    height: 1px;
+
+    background: #ffffff;
+    vertical-align: middle;
+    line-height: normal;
+
+    top: 50%;
+    left: 50%;
+    margin-left: -30px;
+    margin-top: -1px;
+
+    transition: all 100ms ease-out;
+  }
+
+  &__close::before {
+    transform: rotate(45deg);
+  }
+
+  &__close::after {
+    transform: rotate(-45deg);
+  }
+
+  &__close:hover::before,
+  &__close:hover::after {
+    transform: rotate(0deg);
   }
 
   &__list {
@@ -45,23 +89,23 @@
   }
 
   &__item:first-child {
-    transform: translateY(100px);
+    transform: translateY(10px);
   }
 
   &__item:nth-child(2) {
-    transform: translateY(150px);
+    transform: translateY(20px);
   }
 
   &__item:nth-child(3) {
-    transform: translateY(200px);
+    transform: translateY(30px);
   }
 
   &__item:nth-child(4) {
-    transform: translateY(250px);
+    transform: translateY(40px);
   }
 
   &__item:nth-child(5) {
-    transform: translateY(275px);
+    transform: translateY(50px);
   }
 
   &__link {
@@ -70,7 +114,7 @@
 
   &__link::before,
   &__link::after {
-    content: '';
+    content: "";
     width: 0;
     height: 1px;
 
@@ -94,11 +138,11 @@
     width: 50px;
   }
 
-  &__link:hover::before{
+  &__link:hover::before {
     margin-left: 20px;
   }
 
-  &__link:hover::after{
+  &__link:hover::after {
     margin-right: 20px;
   }
 
@@ -112,6 +156,14 @@
   .main-nav {
     font-size: $menu-heading-md-size;
     line-height: $menu-line-md-height;
+  }
+
+  .main-nav__close {
+    top: 40px;
+    right: 30px;
+
+    width: 50px;
+    height: 50px;
   }
 }
 

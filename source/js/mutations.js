@@ -2,10 +2,12 @@
 (function () {
   var pageTitle = document.querySelector('title');
   var logo = document.querySelector('.page-header__logo');
+  //var loader = document.querySelector('.loader');
+  //var columns = loader.querySelectorAll('.loader__column span');
 
   new MutationObserver(function(mutations) {
-    console.log('matations detected');
     var func = window.funcs;
+
     // Если страница отзывов
     if(mutations[0].target.textContent === window.data.PageTitle.REVIEWS) {
       func.changeSlides();

@@ -25,7 +25,6 @@
 /* Главная */
 .content__logo-sign {
   @include margin-killer;
-
 }
 
 .content__stars-wrapper {
@@ -34,9 +33,8 @@
 
   margin: 0 auto;
 
-  overflow: hidden;
-
   box-sizing: border-box;
+  perspective: 340px;
 }
 
 @media (min-width: $tablet-width) {

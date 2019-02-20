@@ -7,7 +7,8 @@ $email = htmlspecialchars($_POST["email"]);
 $phone = htmlspecialchars($_POST["phone"]); 
 $message = htmlspecialchars($_POST["body"]); 
 /* Устанавливаем e-mail адресата */ 
-$myemail = "dobra-lyubvi@yandex.ru";  
+$myemail = "info@insight.ru.net";
+$subject = "Письмо с сайта insight.ru.net";
 /* Создаем новую переменную, присвоив ей значение */ 
 $message_to_myemail = "Здравствуйте!  
 Вашей контактной формой было отправлено сообщение!  
@@ -19,7 +20,7 @@ Phone: $phone
 Конец"; 
 /* Отправляем сообщение, используя mail() функцию */ 
 $from  = "From: $name <$email> \r\n Reply-To: $email \r\n";  
-mail($myemail, $phone, $message_to_myemail, $from); 
+mail($myemail, $subject, $phone, $message_to_myemail, $from); 
 ?> 
 <p>Ваше сообщение было успешно отправлено!</p> 
 <p>На <a href="index.php">Главную >>></a></p> 

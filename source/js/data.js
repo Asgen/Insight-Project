@@ -12,7 +12,7 @@
   // Title страницы отзывов
   var PageTitle = {
     MAIN: 'Insight',
-    REVIEWS: 'reviews Insight' 
+    REVIEWS: 'reviews Insight'
   }
 
   // Коды сервера

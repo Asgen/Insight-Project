@@ -53,6 +53,28 @@
     onClickRemoveThis(wrapper);
   };
 
+  // Прелоадер
+  var playTransition = function (databox, data) {
+    var loader = document.querySelector('.loader');
+    var columns = loader.querySelectorAll('.loader__column span');
+    loader.style.display = 'block';
+    columns.forEach(function(el, i) {
+      el.style.width = '0';
+      el.style.transition = 'width ' + (0.2 + (i * 0.1)) + 's ease-in-out';
+    });
+    setTimeout(function() {
+      columns.forEach(function(el) {
+        el.style.width = '100%';
+      });
+    }, 10);
+    setTimeout(function() {
+      loader.style.display = 'none';
+      columns.forEach(function(el) {
+        el.style.width = '0';
+      });
+    }, 1000);
+  };
+
   // Функция слайдера
   var changeSlides = function () {
     var slider = document.querySelector('.slider');
@@ -80,15 +102,15 @@
 
     var swipeStart = function (e) {
       e = e ? e : window.event;
-      e = ('changedTouches' in e)?e.changedTouches[0] : e;
+      e = ('changedTouches' in e) ? e.changedTouches[0] : e;
       touchStartCoords = {'x':e.pageX, 'y':e.pageY};
       startTime = new Date().getTime();
       //targetElement.textContent = " ";
     };
 
-    var swipeMove = function (e){
+    var swipeMove = function (e) {
       e = e ? e : window.event;
-      e.preventDefault();
+      //e.preventDefault();
     };
 
     var swipeEnd = function (e) {
@@ -103,7 +125,7 @@
             case 'left':
               pushNextSlide();
               break;
-            case 'right':              
+            case 'right':
               pushPrevSlide();
               break;
           }
@@ -116,7 +138,7 @@
       for (var i=0, iLen=evts.length; i<iLen; i++) {
         el.addEventListener(evts[i], fn, false);
       }
-    };   
+    };
     // ------ end Swipe------
 
     // Переключатель на след. слайд
@@ -137,7 +159,6 @@
       }
       change(newIndex);
     };
-    
 
     // Функция смены
     var change = function (index) {
@@ -319,6 +340,7 @@
     onModalOpen: onModalOpen,
     onInputClick: onInputClick,
     onFormChange: onFormChange,
-    onFormSubmit: onFormSubmit
+    onFormSubmit: onFormSubmit,
+    playTransition: playTransition
   }
 })();
