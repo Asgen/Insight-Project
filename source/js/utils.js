@@ -271,7 +271,11 @@
     setTimeout(function() {
       document.body.scrollTop = 0; // For Safari
       document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-      modal.style.height = '100%';
+
+      modal.style.height = 'auto';
+      if (document.body.scrollHeight > modal.offsetHeight) {
+        modal.style.height = '100%';
+      }
       modal.style.opacity = '1';
       modal.style.zIndex = '1';
       modal.style.visibility = 'visible';

@@ -64,6 +64,7 @@
       <div class="content__stars-wrapper">
         <div class="content__stars"></div>
       </div>
+      <button id="modal-free-Id" class="button button--open-modal button--free button--on-main">Получить бесплатный урок</button>
     </section>
 
     <div class="loader">
@@ -202,6 +203,10 @@
     <script>
       var logo = document.querySelector('.page-header__logo');
       logo.style.display = 'none';
+      var open = document.querySelector('.button--open-modal');
+      var func = window.funcs;
+      var tamplateId = '#' + open.id.slice(0,-3); // Get tamplate's id
+      open.addEventListener('click', function (e) {func.onModalOpen(e, tamplateId)});
     </script>
   </body>
 </html>

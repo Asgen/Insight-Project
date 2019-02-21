@@ -71,6 +71,15 @@ a {
   font-size: 16px;
 }
 
+.button--on-main {
+  position: absolute;
+  min-width: 297px;
+
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 .visually-hidden {
   position: absolute;
   width: 1px;

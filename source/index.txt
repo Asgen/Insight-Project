@@ -5,3 +5,4 @@
 <div class="content__stars-wrapper">
   <div class="content__stars"></div>
 </div>
+<button id="modal-free-Id" class="button button--open-modal button--free button--on-main">Получить бесплатный урок</button>
