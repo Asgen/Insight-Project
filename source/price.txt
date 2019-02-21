@@ -29,4 +29,5 @@
       </tr>
     </table>
   </div>
+  <button id="modal-free-Id" class="button button--open-modal button--free">Получить бесплатный урок</button>
 </div>

@@ -210,5 +210,43 @@
         </div>
       </section>
     </template>
+    <template id="modal-free">
+      <section class="modal">
+        <div class="content__container modal__wrapper">
+          <a href="/" class="modal__logo">
+            <img src="img/horizontal-logo-white.svg" alt="Insight языковой центр">
+          </a>
+          <div class="modal__close">
+          </div>
+          <h3 class="modal__heading">Запись на бесплатный пробный урок</h3>
+          <p class="modal__description">Это просто праздник какой-то</p>
+          <form class="modal__form form" action="form_processing.php" method="POST">
+            <div class="form__input">
+              <span class="form__underline">
+                <input type="text" placeholder="Имя" name="name" required autocomplete="off" required>
+              </span>
+            </div>
+            <div class="form__input">
+              <span class="form__underline">
+                <input type="mail" placeholder="Телефон" name="phone" autocomplete="off" required>
+              </span>
+            </div>
+            <div class="form__input form__input--big form__input--last">
+              <h3 class="form__input-heading">Иностранный язык</h3>
+              <span class="form__underline">
+                <input id="chooseLang1" class="form__radio" type="radio" name="language" value="English" checked>
+                <label class="form__label" for="chooseLang1">Английский</label>
+
+                <input id="chooseLang2" class="form__radio" type="radio" name="language" value="Deutsch">
+                <label class="form__label" for="chooseLang2">Немецкий</label>
+                <input id="chooseLang3" class="form__radio" type="radio" name="language" value="French">
+                <label class="form__label" for="chooseLang3">Французский</label>
+            </span>
+            </div>
+            <button class="button form__submit" type="submit">Отправить</button>
+          </form>
+        </div>
+      </section>
+    </template>
   </body>
 </html>

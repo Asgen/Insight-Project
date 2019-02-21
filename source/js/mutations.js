@@ -22,7 +22,9 @@
     // Если есть кнопка открытия модалки, то выполнить
     var open = document.querySelector('.button--open-modal');
     if(open) {
-      open.addEventListener('click', func.onModalOpen);
+      //open.addEventListener('click', func.onModalOpen);
+      var tamplateId = '#' + open.id.slice(0,-3); // Get tamplate's id
+      open.addEventListener('click', function (e) {func.onModalOpen(e, tamplateId)});
     }
 
     // Если есть форма, то выполнить

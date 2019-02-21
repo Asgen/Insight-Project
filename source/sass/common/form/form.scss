@@ -51,7 +51,8 @@
     width: 100%;
   }
 
-  &__underline input {
+  &__underline input[type="text"],
+  &__underline input[type="mail"] {
     width: 100%;
 
     font-size: 1em;
@@ -72,6 +73,35 @@
     border: none;
     outline: none;
     color: white;
+  }
+
+  &__input-heading {
+    @include margin-killer;
+    margin-top: 10px;
+    margin-bottom: 5px;
+
+    color: $white-half-transparent;
+    font-weight: 200;
+    font-size: $sm-subtitle-font-size;
+    line-height: $sm-subtitle-line-height;
+  }
+
+  &__radio {
+    margin-right: 10px;
+  }
+
+  &__label {
+    width: 90%;
+    display: inline-block;
+
+    font-size: 1em;
+    font-weight: 200;
+    line-height: 25px;
+    box-sizing: border-box;
+  }
+
+  &__label:last-child {
+    margin-bottom: 20px;
   }
 
   &__submit {

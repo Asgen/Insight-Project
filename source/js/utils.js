@@ -256,9 +256,9 @@
     });
   };
 
-  var onModalOpen = function (e) {
+  var onModalOpen = function (e, tamplateId) {
     var content = document.querySelector('.content');
-    renderModal('#modal', '.modal');
+    renderModal(tamplateId, '.modal');
     var modal = document.querySelector('.modal');
 
     content.style.opacity = '0';

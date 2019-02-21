@@ -63,7 +63,7 @@
         <span class="slider__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
       </li>
     </ul>
-    <button class="button button--open-modal">Оставить отзыв</button>
+    <button id="modal-Id" class="button button--open-modal">Оставить отзыв</button>
   </section>
   <a href="#" class="content__arrow content__arrow--prev">prev</a>
   <a href="#" class="content__arrow content__arrow--next">next</a>
