@@ -253,6 +253,9 @@
       content.style.opacity = '1';
       content.style.zIndex = '0';
       content.style.visibility = 'visible';
+      setTimeout(function() {
+        modalEl.remove();
+      }, 400);
     });
   };
 

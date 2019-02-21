@@ -1,7 +1,6 @@
 <?php
 /* Осуществляем проверку вводимых данных и их защиту от враждебных
 скриптов */
-$form = htmlspecialchars($_POST["review"]);
 $name = htmlspecialchars($_POST["name"]);
 $surname = htmlspecialchars($_POST["surname"]);
 $email = htmlspecialchars($_POST["email"]);
