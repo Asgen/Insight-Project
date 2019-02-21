@@ -5,17 +5,19 @@ $name = htmlspecialchars($_POST["name"]);
 $surname = htmlspecialchars($_POST["surname"]);
 $email = htmlspecialchars($_POST["email"]);
 $phone = htmlspecialchars($_POST["phone"]);
+$lang = htmlspecialchars($_POST["language"]);
 $message = htmlspecialchars($_POST["body"]);
 /* Устанавливаем e-mail адресата */
 $myemail = "info@insight.ru.net";
 $subject = "Письмо с сайта insight.ru.net";
 /* Создаем новую переменную, присвоив ей значение */
 $message_to_myemail = "Здравствуйте!
-Вашей контактной формой $form было отправлено сообщение!
+Вашей контактной формой было отправлено сообщение!
 Имя отправителя: $name
 Фамилия отправителя: $surname
 E-mail: $email
 Phone: $phone
+Хочет изучать: $lang
 Текст сообщения: $message
 Конец";
 /* Отправляем сообщение, используя mail() функцию */
