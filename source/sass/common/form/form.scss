@@ -87,7 +87,9 @@
   }
 
   &__radio {
+    width: 5%;
     margin-right: 10px;
+    box-sizing: border-box;
   }
 
   &__label {
