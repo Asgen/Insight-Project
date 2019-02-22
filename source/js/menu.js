@@ -10,10 +10,6 @@
     var translate = 20;
 
     var parcer = function () {
-      /*links.forEach(function (el) {
-        el.style.transform = 'translateY(' + translate + 'px)';
-        translate += 10;
-      });*/
       for (var i = 0; i < links.length; i++) {
         links[i].style.transform = 'translateY(' + translate + 'px)';
         translate += 10;
@@ -23,9 +19,7 @@
     switch(state){
       case 'open':
         logo.style.transform = 'translateY(-50px)';
-        //logo.style.zIndex = '1';
         logo.style.opacity = '1';
-        //logo.style.visibility = 'visible';
         logo.style.transform = 'translateY(0)';
 
         parcer();
@@ -37,9 +31,7 @@
         }
         break;
       case 'close':
-        //logo.style.zIndex = '0';
         logo.style.opacity = '0';
-        //logo.style.visibility = 'hidden';
         logo.style.transform = 'translateY(-50px)';
 
         menu.style.opacity = '0';
