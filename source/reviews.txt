@@ -36,6 +36,14 @@
         </span>
         <span class="slider__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
       </li>
+      <li class="slider__item slide" id="slide3">
+        <p class="slider__time">15-01-2019</p>
+        <p class="slider__text">Благодарю Майру Р. за то, что ребенок с удовольствием и радостью ходит на занятия по английскому языку, за то, что знания даются по разработанной ею методике с проработками по каждой теме и современными трактовками, с комфортными условиями для занятий, за то, что оплата берется по фактически проведенным занятиям. Благодарим!</p>
+        <span class="slider__author">Анжелика Ененко
+          <span class="slider__author-id">г. Анапа</span>
+        </span>
+        <span class="slider__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+      </li>
     </ul>
     <button id="modal-Id" class="button button--open-modal">Оставить отзыв</button>
   </section>
