@@ -89,6 +89,9 @@
     var startPosition = next.offsetTop;
     var slideHeight = slides[0].scrollHeight;
 
+    // Ширина должна равняться количеству слайдов *100
+    sliderList.style.width = (slidesAmount * 100) + '%';
+
     // ------ Swipe ------
     var touchStartCoords =  {'x':-1, 'y':-1};  // X and Y coordinates on mousedown or touchstart events.
     var touchEndCoords = {'x':-1, 'y':-1}; // X and Y coordinates on mouseup or touchend events.

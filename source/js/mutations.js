@@ -2,8 +2,6 @@
 (function () {
   var pageTitle = document.querySelector('title');
   var logo = document.querySelector('.page-header__logo');
-  //var loader = document.querySelector('.loader');
-  //var columns = loader.querySelectorAll('.loader__column span');
 
   new MutationObserver(function(mutations) {
     var func = window.funcs;
@@ -22,7 +20,6 @@
     // Если есть кнопка открытия модалки, то выполнить
     var open = document.querySelector('.button--open-modal');
     if(open) {
-      //open.addEventListener('click', func.onModalOpen);
       var tamplateId = '#' + open.id.slice(0,-3); // Get tamplate's id
       open.addEventListener('click', function (e) {func.onModalOpen(e, tamplateId)});
     }
